@@ -2,7 +2,7 @@
 
 Este projeto foi desenvolvido como atividade da disciplina de **Estruturas de Dados e Algoritmos II** e tem como objetivo implementar algoritmos de busca para encontrar soluções de Sudoku em um arquivo CSV contendo aproximadamente 9 milhões de dados. Os algoritmos implementados incluem:
 
-- **Lista com Saltos (Jump List)**
+- **Lista com Saltos (Skip List)**
 - **Busca Binária**
 - **Busca Interpolada**
 
