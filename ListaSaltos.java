@@ -94,8 +94,6 @@ public class ListaSaltos<T>{
     }
 
     public void metodo2_niveis(int nivel_max){
-
-        if (ind_atual > tamanho_maximo) return;
         
         try{
             if(nivel_max == 1){
