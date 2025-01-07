@@ -107,10 +107,10 @@ public class Main {
                     if(comp < 0) return -1;
                     return 1;
                 });
+                tf = System.nanoTime();
                 res[1].operacoes = listaIndex.qOperacoes();
                 res[1].sudoku = listaIndex.elemento(busc);
 
-                tf = System.nanoTime();
                 res[1].tempo = (tf - ti)/1000;
 
                 // Busca interpolada:
