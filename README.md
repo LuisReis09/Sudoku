@@ -55,6 +55,7 @@ Após instalar, será necessário ordenar o arquivo para utilizá-lo. Para isso,
 3. Após a preparação do arquivo CSV, utilize-o na aplicação Java.
 
 ## Observações
+- **ATENÇÃO**: o programa demanda muita memória RAM para ser executado, sugerimos que tenha pelo menos 8GB de memória RAM no computador que executar o programa.
 - Certifique-se de alocar memória suficiente para a aplicação Java, conforme os parâmetros indicados nos comandos de execução.
 - O arquivo CSV deve estar devidamente ordenado para garantir o funcionamento correto dos algoritmos de busca.
 
