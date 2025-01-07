@@ -40,6 +40,7 @@ A aplicação possui as seguintes telas:
 
 O arquivo CSV com os dados de Sudoku **não está presente no repositório** ou no arquivo ZIP, pois ele é muito pesado para ser incluído. 
 Porém, é possível baixá-lo no seguinte link: https://www.kaggle.com/datasets/rohanrao/sudoku.
+
 Após instalar, será necessário ordenar o arquivo para utilizá-lo. Para isso, siga os passos abaixo:
 
 1. Utilize o programa `ordenar.c` para ordenar o arquivo CSV.
