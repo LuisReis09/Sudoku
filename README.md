@@ -33,12 +33,14 @@ A aplicação possui as seguintes telas:
 
 2. **Execução:**
    ```bash
-   java -Xmx2g -Xms8g Main
+   java -Xms2g -Xmx8g Main
    ```
 
 ## Preparação do Arquivo CSV
 
-O arquivo CSV com os dados de Sudoku **não está presente no repositório** ou no arquivo ZIP, pois ele é muito pesado para ser incluído. Para utilizá-lo, siga os passos abaixo:
+O arquivo CSV com os dados de Sudoku **não está presente no repositório** ou no arquivo ZIP, pois ele é muito pesado para ser incluído. 
+Porém, é possível baixá-lo no seguinte link: https://www.kaggle.com/datasets/rohanrao/sudoku.
+Após instalar, será necessário ordenar o arquivo para utilizá-lo. Para isso, siga os passos abaixo:
 
 1. Utilize o programa `ordenar.c` para ordenar o arquivo CSV.
    - Certifique-se de ajustar o caminho e o nome do arquivo dentro do programa C, caso necessário.
