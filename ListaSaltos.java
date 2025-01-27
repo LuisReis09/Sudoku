@@ -1,6 +1,6 @@
 
 
-import static java.lang.Math.round;
+// import static java.lang.Math.round;
 
 
 import java.util.function.Consumer;
@@ -54,14 +54,18 @@ public class ListaSaltos<T>{
     private int ind_atual = 0;
 
     private int qOperacoes = 0;
+    private char metodo;
 
     @SuppressWarnings("unchecked")
-    public ListaSaltos(int quant_maxima){
+    public ListaSaltos(int quant_maxima, char metodo){
         tamanho_maximo = quant_maxima;
+        this.metodo = metodo;
         nivel_maximo = (int) Math.floor(Math.log(quant_maxima) / Math.log(2));
 
-        metodo2_niveis = new char[quant_maxima];
-        metodo2_niveis(nivel_maximo);
+        if(metodo == 2){
+            metodo2_niveis = new char[quant_maxima];
+            metodo2_niveis(nivel_maximo);
+        }
         
         cabeca       = new NoSaltos[nivel_maximo + 1];
 
@@ -73,6 +77,14 @@ public class ListaSaltos<T>{
     }
 
     public void inserir(T elemento){
+        if(metodo == 1){
+            inserirMetodo1(elemento);
+        }else{
+            inserirMetodo2(elemento);
+        }
+    }
+
+    private void inserirMetodo1(T elemento){
         if(tamanho == tamanho_maximo){
             System.out.println("Tamanho maximo atingido");
             return;
@@ -93,7 +105,7 @@ public class ListaSaltos<T>{
         tamanho++;
     }
 
-    public void metodo2_niveis(int nivel_max){
+    private void metodo2_niveis(int nivel_max){
         
         try{
             if(nivel_max == 1){
@@ -336,5 +348,9 @@ public class ListaSaltos<T>{
 
     public int getNivelMaximo(){
         return nivel_maximo;
+    }
+
+    public char getMetodo(){
+        return metodo;
     }
 }

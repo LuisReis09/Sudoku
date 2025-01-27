@@ -19,7 +19,7 @@ public class Testes{
 
         ListaSaltos<Sudoku> listaSaltos;
         try{
-            listaSaltos = leitor.Sudoku_TabSaltos2();
+            listaSaltos = leitor.Sudoku_TabSaltos((char) 2);
         } catch(Exception e){
             System.out.println("Erro ao ler arquivo!");
             e.printStackTrace();
@@ -33,7 +33,7 @@ public class Testes{
             pesquisadas[i] = reader.readLine().split(",")[0];
             final String input = pesquisadas[i];
             tempoInicio = System.nanoTime();
-            Sudoku pesq = buscar.elemento_metodo2(
+            Sudoku pesq = buscar.buscaSaltos(
                 new Aceitacao<Sudoku>() {
                     public boolean aceitar(Sudoku el){
                         return el.puzzle.compareTo(input) == 0;
@@ -63,7 +63,7 @@ public class Testes{
                 listaSaltos = null;
                 System.gc();
                 try{
-                    listaSaltos = leitor.Sudoku_TabSaltos();
+                    listaSaltos = leitor.Sudoku_TabSaltos((char) 1);
                 } catch(Exception e){
                     System.out.println("Erro ao ler arquivo!");
                     e.printStackTrace();
@@ -74,7 +74,7 @@ public class Testes{
 
             final String input = pesquisadas[j];
             tempoInicio = System.nanoTime();
-            Sudoku pesq = buscar.elemento(
+            Sudoku pesq = buscar.buscaSaltos(
                 new Aceitacao<Sudoku>() {
                     public boolean aceitar(Sudoku el){
                         return el.puzzle.compareTo(input) == 0;
@@ -95,7 +95,7 @@ public class Testes{
 
 
         try{
-            BufferedWriter writer = new BufferedWriter(new FileWriter("resultados_comparacoes2.txt"));
+            BufferedWriter writer = new BufferedWriter(new FileWriter("resultados_comparacoes3.txt"));
             int s1 = 0, s2 = 0;
             for(int i=0; i<j; i++){
                 writer.write(pesquisadas[i] + "\t(" + tempoMetodo1[i] + ", " + qOperacoes1[i] + ") --- (" + tempoMetodo2[i] + ", " + qOperacoes2[i] + ")\n");

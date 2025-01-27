@@ -37,7 +37,7 @@ public class Main {
             System.out.println("Lista indexada carregada com sucesso!  Tempo: " + tempoListaIndexada + "ms");
 
             ti = System.currentTimeMillis();
-            listaSaltos = leitor.Sudoku_TabSaltos2();
+            listaSaltos = leitor.Sudoku_TabSaltos((char) 2);
             tf = System.currentTimeMillis();
             tempoListaSaltos = tf - ti;
             System.out.println("Lista com saltos carregada com sucesso!  Tempo: " + tempoListaSaltos + "ms");
@@ -82,7 +82,7 @@ public class Main {
                 res[0] = new Resultados();
                 res[0].metodo = "SkipList";
                 long ti = System.nanoTime();
-                res[0].sudoku = buscar.elemento_metodo2(
+                res[0].sudoku = buscar.buscaSaltos(
                     new Aceitacao<Sudoku>() {
                         public boolean aceitar(Sudoku el){
                             return el.puzzle.compareTo(input) == 0;

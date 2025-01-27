@@ -50,32 +50,16 @@ public class LeitorArquivo{
         return lista;
     }
 
-    public ListaSaltos<Sudoku> Sudoku_TabSaltos() throws FileNotFoundException {
+    public ListaSaltos<Sudoku> Sudoku_TabSaltos(char metodo) throws FileNotFoundException {
         Scanner scan = new Scanner(new File(caminhoArquivo));
 
-        ListaSaltos<Sudoku> lista = new ListaSaltos<Sudoku>(9_000_001);
+        ListaSaltos<Sudoku> lista = new ListaSaltos<Sudoku>(9_000_001, metodo);
         String[] linha;
         
         for(int i=0; i < qtd_linhas; i++){
             linha = scan.nextLine().split(",");
             Sudoku s = new Sudoku(linha[0], linha[1]);
             lista.inserir(s);
-        }
-
-        scan.close();
-        return lista;
-    }
-
-    public ListaSaltos<Sudoku> Sudoku_TabSaltos2() throws FileNotFoundException {
-        Scanner scan = new Scanner(new File(caminhoArquivo));
-
-        ListaSaltos<Sudoku> lista = new ListaSaltos<Sudoku>(9_000_001);
-        String[] linha;
-        
-        for(int i=0; i < qtd_linhas; i++){
-            linha = scan.nextLine().split(",");
-            Sudoku s = new Sudoku(linha[0], linha[1]);
-            lista.inserirMetodo2(s);
         }
 
         scan.close();

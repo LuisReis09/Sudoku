@@ -58,7 +58,16 @@ public class Buscas {
         return meio;
     }
 
-    public Sudoku elemento(Aceitacao<Sudoku> aceitacao, Predicate<Sudoku> continuacao, ListaSaltos<Sudoku> listaSaltos){
+    public Sudoku buscaSaltos(Aceitacao<Sudoku> aceitacao, Predicate<Sudoku> continuacao, ListaSaltos<Sudoku> listaSaltos){
+        if(listaSaltos.getMetodo() == 1){
+            return elemento_metodo1(aceitacao, continuacao, listaSaltos);
+        }else{
+            return elemento_metodo2(aceitacao, continuacao, listaSaltos);
+        }
+ 
+    }
+
+    private Sudoku elemento_metodo1(Aceitacao<Sudoku> aceitacao, Predicate<Sudoku> continuacao, ListaSaltos<Sudoku> listaSaltos){
         
         /*
             Continuacao deve ser uma funcao que retorna true se a procura deve seguir
@@ -138,7 +147,7 @@ public class Buscas {
         return null;
     }
 
-    public Sudoku elemento_metodo2(Aceitacao<Sudoku> aceitacao, Predicate<Sudoku> continuacao, ListaSaltos<Sudoku> listaSaltos){
+    private Sudoku elemento_metodo2(Aceitacao<Sudoku> aceitacao, Predicate<Sudoku> continuacao, ListaSaltos<Sudoku> listaSaltos){
         qOperacoes = 0;
 
         int nivel_maximo = listaSaltos.getNivelMaximo();
