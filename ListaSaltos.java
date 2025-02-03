@@ -9,12 +9,17 @@ import java.util.function.Predicate;
 
 /*
     Implementacao de uma lista encadeada com saltos, que permite a insercao de elementos
-    em niveis aleatorios, com o objetivo de otimizar a busca de elementos. 
+    de forma aleatoria (metodo 1) ou pre-definida (metodo 2).
+
+    CONSTRUTOR:
+    ListaSaltos(int quant_maxima, char metodo)
+        - recebe a quantidade maxima de elementos que a lista pode conter e o metodo de saltos a ser utilizado
+
 
     ===== METODOS DISPONIVEIS =====
     
     void inserir(T elemento)               
-        - insere um elemento na lista
+        - insere um elemento na lista, de acordo com o metodo escolhido
     
     void exibir()                         
         - exibe a lista
@@ -42,6 +47,16 @@ import java.util.function.Predicate;
     
     void limpar()
         - limpa a lista
+    
+    NoSaltos<T>[] getCabeca()
+        - retorna o vetor de cabecas da lista
+
+    int getNivelMaximo()
+        - retorna o nivel maximo da lista
+    
+    char getMetodo()
+        - retorna o metodo de saltos utilizado
+
 */
 
 public class ListaSaltos<T>{

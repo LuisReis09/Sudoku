@@ -26,6 +26,9 @@ import java.util.function.Predicate;
     
     int posicao(T elemento)
         - Retorna a posição do elemento informado na lista
+
+    int posicao(Predicate<T> condicao)
+        - Retorna a posição do elemento que atende a condição informada na lista
     
     void limpar()
         - Limpa a lista, removendo e desalocando todos os elementos

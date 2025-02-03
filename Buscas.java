@@ -1,6 +1,27 @@
 import java.math.BigInteger;
 import java.util.function.Predicate;
 
+/*
+    Essa classe contem metodos especificamente projetados para a resolucao da atividade.
+    Contem os seguintes metodos publicos:
+
+    1. Sudoku buscaInterpolada(String, ListaIndexada<Sudoku>)
+        - Recebe uma string e uma lista indexada de Sudoku.
+        - Retorna o Sudoku correspondente a string, caso exista na lista, ou null caso contrario.
+
+    2. Sudoku buscaSaltos(Aceitacao<Sudoku>, Predicate<Sudoku>, ListaSaltos<Sudoku>)
+        - Recebe uma funcao de aceitacao, uma funcao de continuacao e uma lista de saltos.
+        - Realiza a busca conforme qual metodo de saltos foi escolhido.
+        - Retorna o Sudoku correspondente a funcao de aceitacao, ou null caso nao exista.
+    
+    3. int qOperacoes()
+        - Retorna a quantidade de operacoes realizadas na ultima busca.
+    
+
+
+    * OBS.: como a funcao de busca binaria poderia ser mais generica e funcionar pra qualquer elemento template,
+    deixamos a funcao de busca binaria como um metodo publico da propria classe ListaIndexada.
+*/
 
 public class Buscas {
     private int qOperacoes = 0;
